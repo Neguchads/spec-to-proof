@@ -5,11 +5,17 @@ description: Define acceptance criteria and verify software changes with reprodu
 
 # Spec to Proof
 
-For a quick audit, follow [Quick audit](references/quick-audit.md) and use the verification recording rules below. Inspect one representative flow by default.
+## Choose the workflow
+
+- **Software change:** define acceptance, deliver the change, and verify it.
+- **Quick audit:** follow [Quick audit](references/quick-audit.md) for a focused assessment of existing work. Skip implementation unless fixes were requested.
+- **Planning or verification only:** perform the requested stage and preserve the requested write boundaries.
+
+Apply the scope, evidence, and reporting rules to each workflow.
 
 ## Define acceptance
 
-- Read the project instructions, locate the actual entry point, and reuse existing specifications and checks. A planning or verification-only request authorizes only that stage. Apply implementation steps when the task calls for changes. Proceed autonomously on reversible decisions. State assumptions that affect behavior or acceptance. Ask only when repository evidence and user intent leave a material decision unresolved, or when authorization is required.
+- Read the project instructions, locate the actual entry point, and reuse existing specifications and checks. Proceed autonomously on reversible decisions. State assumptions that affect behavior or acceptance. Ask only when repository evidence and user intent leave a material decision unresolved, or when authorization is required.
 - Identify the observable outcome, hard constraints, and target environment. Rank preferences when they conflict. Distinguish targets from comparative measurements. If no threshold exists, report the baseline and the change without inventing a pass condition.
 - Map each material criterion to a repeatable scenario with an initial state, action, expected result, and evidence. Keep the detail proportional to the change. A small fix may need only one failing scenario and its focused regression check. Expand coverage when the change crosses boundaries, affects existing users, or depends on a particular environment.
 
@@ -42,7 +48,7 @@ For a quick audit, follow [Quick audit](references/quick-audit.md) and use the v
 
 ## Close with evidence
 
-Link the verification record if one was saved. Summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
+Link the verification record if one was saved. Summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare a software change complete only when all required criteria pass. For an audit, report findings and coverage even when checks fail.
 
 ## Compose with other skills
 
