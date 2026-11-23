@@ -1,9 +1,25 @@
 ---
 name: spec-to-proof
-description: Define acceptance criteria and verify software changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target.
+description: Clarify software requests, define acceptance criteria, and verify changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target. Also use for focused audits of existing code and architecture.
 ---
 
 # Spec to Proof
+
+## Choose the workflow
+
+- **Software change:** define acceptance, deliver the change, and verify it.
+- **Quick audit:** follow [Quick audit](references/quick-audit.md) for a focused assessment of existing work. Skip implementation unless fixes were requested.
+- **Planning or verification only:** perform the requested stage and preserve the requested write boundaries.
+
+Apply the scope, evidence, and reporting rules to each workflow.
+
+## Clarify material decisions
+
+For a new product, broad feature, or underspecified request, first summarize the intended outcome and inspect relevant project context. Identify what is already decided, what can be inferred safely, and which unresolved choices could materially change the first release, user flow, compatibility, or acceptance checks.
+
+Ask up to three targeted questions in the first round. Tie each one to a decision that changes the work. Offer concrete options when they help, with a recommended default and its tradeoff. Use the user's language. Wait for answers before implementing work that depends on unresolved decisions. Ask a follow-up only if an answer exposes another consequential choice. For a clear request, proceed with reversible assumptions stated briefly.
+
+Turn the answers into a short working brief with the first deliverable, constraints, deferred features, and acceptance scenarios. If the user asked only for prompt review or clarification, stop at the questions or brief as appropriate.
 
 ## Define acceptance
 
@@ -32,9 +48,17 @@ description: Define acceptance criteria and verify software changes with reprodu
 - Give each subagent a question or deliverable, explicit scope, file ownership if it can edit, and the evidence to return. Keep reviews read-only unless edits are assigned. For blind artifact review, share the artifact and criteria without implementation rationale.
 - The lead agent integrates changes and resolves conflicting findings against the source or runtime. Verify the resulting behavior before claiming completion. If an optional reviewer is unavailable, continue with the checks at hand. Mark any required review as unverified.
 
+## Record verification
+
+Write the canonical record in English even when the conversation uses another language, unless the project or user specifies a different record language. Add a short PT-BR summary when useful to the user.
+
+- Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/verification/`. Use a dated directory per task with a verification.md record and an artifacts subdirectory when needed. Follow the [verification record guide](references/verification-records.md) for naming, architecture notes, and domain-specific evidence. Update the same record when rerunning checks.
+- Record the tested revision, relevant uncommitted changes or artifact identity, the environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
+- Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Stage deliverables by explicit path and check the staged diff before committing so local evidence stays out of the commit. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
+
 ## Close with evidence
 
-Report each material criterion as passed, failed, or unverified. Include the command or scenario, the observed result, and any blocker. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
+Link the verification record if one was saved. Summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare a software change complete only when all required criteria pass. For an audit, report findings and coverage even when checks fail.
 
 ## Compose with other skills
 
