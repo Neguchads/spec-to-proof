@@ -13,7 +13,7 @@ description: Define acceptance criteria and verify software changes with reprodu
 
 ## Deliver and verify
 
-- Implement the smallest complete path through the normal entry point. For a regression, reproduce the original symptom when feasible and reuse that scenario after the fix. Prefer existing checks that exercise the changed behavior. Add a focused check when the existing suite would miss a material regression.
+- Implement the smallest complete path through the normal entry point. For a regression, reproduce the original symptom when feasible and reuse that scenario after the fix. Automate criteria that a command can decide, reusing existing checks that exercise the changed behavior. Add focused coverage for material regressions the suite would miss. Reserve qualitative review for judgments that require it.
 - Verify the production path or a representative runtime. Run the checks required by the repository. Confirm that the tested artifact comes from the current source and rebuild when stale output could mask a failure. Record what the checks actually exercised.
 - For performance, hold the workload and configuration constant. Compare before and after when possible and report the metric, unit, environment, and limitations. Use fixed inputs, a scripted interaction, or a repeatable route as appropriate.
 - For visual or interaction quality, capture fixed states and record time-dependent behavior when needed. If independent artifact review is available and authorized, give the reviewer the criteria and the artifact. Use the findings to fix concrete defects and rerun affected checks. Follow project requirements for code review and keep any required but unavailable review pending.
