@@ -31,7 +31,7 @@ Use `spec` or `autoplan` for formal planning when requested, `investigate-first`
 
 ## Verification logs
 
-Each task gets a Markdown record under the project's designated log directory, or `logs/verification/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The record links to supporting evidence such as frontend screenshots, sanitized backend traces, and binary metadata or disassembly excerpts. See the [verification record guide](references/verification-records.md) for naming and layout. The final response links to the record. Logs stay local by default.
+When the task permits writes, the skill saves a Markdown record under the project's designated log directory, or `logs/verification/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The record links to supporting evidence such as frontend screenshots, sanitized backend traces, and binary metadata or disassembly excerpts. See the [verification record guide](references/verification-records.md) for naming and layout. The final response links to the record or reports the evidence inline for read-only work. Logs stay local by default.
 
 ## Evidence and delegation
 

@@ -16,7 +16,7 @@ Use an ISO date and a lowercase kebab-case slug. Add a short task or run identif
 
 ## Record structure
 
-- **Scope:** task, acceptance criteria, tested commit, and relevant worktree changes. Record environment, tool versions, configuration, and fixture identifiers where they affect reproduction.
+- **Scope:** task, acceptance criteria, tested commit and relevant worktree changes. Identify the changed files or the tested artifact hash when the commit alone cannot identify what ran. Record environment, tool versions, configuration, and fixture identifiers where they affect reproduction.
 - **Architecture:** identify the affected entry point, components, boundaries, and data flow. Name the modules or subsystems actually exercised. Include a short diagram when it clarifies the path.
 - **Checks:** ID, criterion, prerequisites, command or scenario, expected result, observed result, status, and artifact links. Use passed, failed, or unverified.
 - **Findings:** symptom, reproduction steps, impact, affected component or symbol, and supporting evidence. Mark the root cause as confirmed or suspected. Name the fix and rerun where applicable.
@@ -31,4 +31,4 @@ Use an ISO date and a lowercase kebab-case slug. Add a short task or run identif
 | Binary, firmware, or recompilation | Artifact name, build or SHA-256, executable format, CPU architecture, bitness, endianness, and tool version. Record relevant sections, symbols, instruction bytes and mnemonics, registers, or structure field offsets and sizes with provenance. Distinguish file offset, RVA, and runtime virtual address. State the load base if needed to reproduce address translation. Mark inferred symbols and reconstructed layouts as such. Prefer an annotated excerpt or metadata over copying the binary or dump. |
 | Performance | Workload, configuration, sample count, timing unit, baseline and candidate, and relevant statistics. Capture sanitized raw samples when useful for reproduction. |
 
-Use established names and exact identifiers from the project. Distinguish a defect (behavior), a failure (check result), and an error (runtime or tool signal). Use Markdown for interpretation and a native format for supporting evidence, such as PNG for screenshots, JSON for structured responses, CSV for measurements, and TXT for tool excerpts. Preserve units and numeric bases. Redact sensitive information in both the record and its artifacts.
+Use established names and exact identifiers from the project. Distinguish a defect (behavior), a failure (check result), and an error (runtime or tool signal). Use Markdown for interpretation and a native format for supporting evidence, such as PNG for screenshots, JSON for structured responses, CSV for measurements, and TXT for tool excerpts. Preserve units and numeric bases. Redact sensitive information before saving the record or its artifacts. If an artifact cannot be safely sanitized, record a safe summary and explain the omission.

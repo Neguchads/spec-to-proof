@@ -7,7 +7,7 @@ description: Define acceptance criteria and verify software changes with reprodu
 
 ## Define acceptance
 
-- Read the project instructions, locate the actual entry point, and reuse existing specifications and checks. Proceed autonomously on reversible decisions. State assumptions that affect behavior or acceptance. Ask only when repository evidence and user intent leave a material decision unresolved, or when authorization is required.
+- Read the project instructions, locate the actual entry point, and reuse existing specifications and checks. A planning or verification-only request authorizes only that stage. Apply implementation steps when the task calls for changes. Proceed autonomously on reversible decisions. State assumptions that affect behavior or acceptance. Ask only when repository evidence and user intent leave a material decision unresolved, or when authorization is required.
 - Identify the observable outcome, hard constraints, and target environment. Rank preferences when they conflict. Distinguish targets from comparative measurements. If no threshold exists, report the baseline and the change without inventing a pass condition.
 - Map each material criterion to a repeatable scenario with an initial state, action, expected result, and evidence. Keep the detail proportional to the change. A small fix may need only one failing scenario and its focused regression check. Expand coverage when the change crosses boundaries, affects existing users, or depends on a particular environment.
 
@@ -35,12 +35,12 @@ description: Define acceptance criteria and verify software changes with reprodu
 ## Record verification
 
 - Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/verification/`. Use a dated directory per task with a verification.md record and an artifacts subdirectory when needed. Follow the [verification record guide](references/verification-records.md) for naming, architecture notes, and domain-specific evidence. Update the same record when rerunning checks.
-- Record the revision and whether the worktree had changes, the relevant environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
-- Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Avoid staging it by default. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
+- Record the tested revision, relevant uncommitted changes or artifact identity, the environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
+- Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Stage deliverables by explicit path and check the staged diff before committing so local evidence stays out of the commit. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
 
 ## Close with evidence
 
-Link the verification record and summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
+Link the verification record if one was saved. Summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
 
 ## Compose with other skills
 
