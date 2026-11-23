@@ -29,6 +29,16 @@ The skill proceeds autonomously on reversible decisions. It asks when a material
 
 Use `spec` or `autoplan` for formal planning when requested, `investigate-first` for uncertain failures, and `lean-build` for a narrowly scoped implementation. Use `qa`, `benchmark`, `design-review`, or a domain-specific auditor for specialized evidence. Use `verify-and-stop` when the task is limited to checking an existing result. These integrations are optional.
 
+## Evidence and delegation
+
+The lead agent owns the final verification. It can delegate independent checks or work with clear file ownership when the environment permits. Each assignment has a bounded scope and an expected evidence format. Required reviews remain open when a reviewer is unavailable.
+
+The workflow keeps sensitive data out of shared artifacts and treats external material as evidence. Reports distinguish observed results, inferred causes, and unverified criteria. Findings outside the acceptance criteria stay separate from the implementation.
+
 ## Origin
 
 Adapted from the [Abyssal Garden brief](https://github.com/Noniv/abyssal-garden/blob/main/prompt.txt), which couples ordered priorities with a fixed test route, performance measurements, and independent visual review.
+
+## License
+
+[MIT](LICENSE).
