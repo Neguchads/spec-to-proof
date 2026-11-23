@@ -1,11 +1,44 @@
 # spec-to-proof
 
-Skill para Codex que liga critérios de aceite, implementação e verificação reproduzível.
+A Codex skill for turning software requirements into explicit acceptance criteria and verifying them against the running system. It scales from a single regression check to a controlled benchmark or an artifact review.
 
-## Uso
+## Install and invoke
 
-Copie a pasta com o [SKILL.md](SKILL.md) para `~/.codex/skills/spec-to-proof`. No chat, chame `$spec-to-proof` e descreva o trabalho.
+Copy this repository's [`SKILL.md`](SKILL.md) to `$CODEX_HOME/skills/spec-to-proof/SKILL.md`. If `CODEX_HOME` is unset, use `~/.codex` as the base directory.
 
-Exemplo: “$spec-to-proof Corrija o travamento ao carregar um save antigo e verifique pelo fluxo real do jogo.”
+In Codex, invoke the skill by name:
 
-Inspirada no [prompt do Abyssal Garden](https://github.com/Noniv/abyssal-garden/blob/main/prompt.txt).
+> $spec-to-proof Fix the crash when loading a save from the previous release. Use a representative save and verify that the loaded game can advance one turn.
+
+## Workflow
+
+1. **Define acceptance.** Identify the observable outcome, constraints, target environment, and priority order. Pair each material criterion with a check.
+2. **Implement a complete slice.** Use the normal entry point and reuse the project's existing behavior and tests where they fit.
+3. **Collect evidence.** Run the checks, record the observed results, and flag criteria the available environment cannot verify.
+
+The skill proceeds autonomously on reversible decisions. It asks when a material requirement remains ambiguous or an action needs authorization.
+
+| Change | Example evidence |
+| --- | --- |
+| API feature | A request through the real HTTP route with assertions on the response and persisted state |
+| CLI regression | A fixed fixture with the expected exit code and output |
+| Game optimization | Before-and-after frame times on the same route, settings, and hardware |
+| Interface change | A recorded interaction and captures at fixed states for visual review |
+
+## Use with existing skills
+
+Use `spec` or `autoplan` for formal planning when requested, `investigate-first` for uncertain failures, and `lean-build` for a narrowly scoped implementation. Use `qa`, `benchmark`, `design-review`, or a domain-specific auditor for specialized evidence. Use `verify-and-stop` when the task is limited to checking an existing result. These integrations are optional.
+
+## Evidence and delegation
+
+The lead agent owns the final verification. It can delegate independent checks or work with clear file ownership when the environment permits. Each assignment has a bounded scope and an expected evidence format. Required reviews remain open when a reviewer is unavailable.
+
+The workflow keeps sensitive data out of shared artifacts and treats external material as evidence. Reports distinguish observed results, inferred causes, and unverified criteria. Findings outside the acceptance criteria stay separate from the implementation.
+
+## Origin
+
+Adapted from the [Abyssal Garden brief](https://github.com/Noniv/abyssal-garden/blob/main/prompt.txt), which couples ordered priorities with a fixed test route, performance measurements, and independent visual review.
+
+## License
+
+[MIT](LICENSE).
