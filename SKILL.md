@@ -32,9 +32,15 @@ description: Define acceptance criteria and verify software changes with reprodu
 - Give each subagent a question or deliverable, explicit scope, file ownership if it can edit, and the evidence to return. Keep reviews read-only unless edits are assigned. For blind artifact review, share the artifact and criteria without implementation rationale.
 - The lead agent integrates changes and resolves conflicting findings against the source or runtime. Verify the resulting behavior before claiming completion. If an optional reviewer is unavailable, continue with the checks at hand. Mark any required review as unverified.
 
+## Record verification
+
+- Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/spec-to-proof/`. Use a dated, task-specific filename and preserve previous records. Update the same record when rerunning checks.
+- Record the revision and whether the worktree had changes, the relevant environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
+- Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Avoid staging it by default. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
+
 ## Close with evidence
 
-Report each material criterion as passed, failed, or unverified. Include the command or scenario, the observed result, and any blocker. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
+Link the verification record and summarize the outcome and any open criteria. An unavailable environment leaves the criterion unverified. Declare completion only when all required criteria pass.
 
 ## Compose with other skills
 

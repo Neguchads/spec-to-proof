@@ -29,6 +29,10 @@ The skill proceeds autonomously on reversible decisions. It asks when a material
 
 Use `spec` or `autoplan` for formal planning when requested, `investigate-first` for uncertain failures, and `lean-build` for a narrowly scoped implementation. Use `qa`, `benchmark`, `design-review`, or a domain-specific auditor for specialized evidence. Use `verify-and-stop` when the task is limited to checking an existing result. These integrations are optional.
 
+## Verification logs
+
+Each task gets a Markdown record under the project's designated log directory, or `logs/spec-to-proof/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The final response links to the record. Logs stay local by default.
+
 ## Evidence and delegation
 
 The lead agent owns the final verification. It can delegate independent checks or work with clear file ownership when the environment permits. Each assignment has a bounded scope and an expected evidence format. Required reviews remain open when a reviewer is unavailable.
