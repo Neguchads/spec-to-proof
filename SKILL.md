@@ -42,6 +42,8 @@ Apply the scope, evidence, and reporting rules to each workflow.
 
 ## Record verification
 
+Write the canonical record in English even when the conversation uses another language, unless the project or user specifies a different record language. Add a short PT-BR summary when useful to the user.
+
 - Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/verification/`. Use a dated directory per task with a verification.md record and an artifacts subdirectory when needed. Follow the [verification record guide](references/verification-records.md) for naming, architecture notes, and domain-specific evidence. Update the same record when rerunning checks.
 - Record the tested revision, relevant uncommitted changes or artifact identity, the environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
 - Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Stage deliverables by explicit path and check the staged diff before committing so local evidence stays out of the commit. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
