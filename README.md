@@ -4,7 +4,7 @@ A Codex skill for turning software requirements into explicit acceptance criteri
 
 ## Install and invoke
 
-Copy this repository's [`SKILL.md`](SKILL.md) to `$CODEX_HOME/skills/spec-to-proof/SKILL.md`. If `CODEX_HOME` is unset, use `~/.codex` as the base directory.
+Copy [`SKILL.md`](SKILL.md) and the [`references/`](references/) directory into `$CODEX_HOME/skills/spec-to-proof/`. If `CODEX_HOME` is unset, use `~/.codex` as the base directory.
 
 In Codex, invoke the skill by name:
 
@@ -31,7 +31,7 @@ Use `spec` or `autoplan` for formal planning when requested, `investigate-first`
 
 ## Verification logs
 
-Each task gets a Markdown record under the project's designated log directory, or `logs/spec-to-proof/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The final response links to the record. Logs stay local by default.
+Each task gets a Markdown record under the project's designated log directory, or `logs/verification/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The record links to supporting evidence such as frontend screenshots, sanitized backend traces, and binary metadata or disassembly excerpts. See the [verification record guide](references/verification-records.md) for naming and layout. The final response links to the record. Logs stay local by default.
 
 ## Evidence and delegation
 

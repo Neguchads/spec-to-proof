@@ -34,7 +34,7 @@ description: Define acceptance criteria and verify software changes with reprodu
 
 ## Record verification
 
-- Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/spec-to-proof/`. Use a dated, task-specific filename and preserve previous records. Update the same record when rerunning checks.
+- Save one Markdown record per task in the repository's designated verification log directory. If it has none, use `logs/verification/`. Use a dated directory per task with a verification.md record and an artifacts subdirectory when needed. Follow the [verification record guide](references/verification-records.md) for naming, architecture notes, and domain-specific evidence. Update the same record when rerunning checks.
 - Record the revision and whether the worktree had changes, the relevant environment, and each criterion's command or scenario, expected result, observed result, and status (passed, failed, or unverified). Include artifact references, blockers, and material retries when they help reproduce the result.
 - Summarize relevant output and redact secrets, personal data, and sensitive paths. Keep the record local unless the project explicitly tracks it or the user requests publication. Avoid staging it by default. If writes are unavailable or the task is read-only, provide the same evidence in the final response.
 
