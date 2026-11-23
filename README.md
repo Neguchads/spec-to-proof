@@ -10,6 +10,16 @@ In Codex, invoke the skill by name:
 
 > $spec-to-proof Fix the crash when loading a save from the previous release. Use a representative save and verify that the loaded game can advance one turn.
 
+## Start with the decisions that matter
+
+For a broad request such as “build a game launcher,” the skill reviews the brief and asks targeted questions before implementing dependent work. For example:
+
+- Which games and operating systems must the first release support?
+- What should launch day cover: launching an installed game, or also installing and updating it?
+- What must a player be able to do from a clean machine to count the first release as ready?
+
+The answers become a short brief and acceptance scenarios. A clear fix can go straight to implementation.
+
 ## Workflow
 
 1. **Define acceptance.** Identify the observable outcome, constraints, target environment, and priority order. Pair each material criterion with a check.

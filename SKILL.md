@@ -1,6 +1,6 @@
 ---
 name: spec-to-proof
-description: Define acceptance criteria and verify software changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target. Also use for focused audits of existing code and architecture.
+description: Clarify software requests, define acceptance criteria, and verify changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target. Also use for focused audits of existing code and architecture.
 ---
 
 # Spec to Proof
@@ -12,6 +12,14 @@ description: Define acceptance criteria and verify software changes with reprodu
 - **Planning or verification only:** perform the requested stage and preserve the requested write boundaries.
 
 Apply the scope, evidence, and reporting rules to each workflow.
+
+## Clarify material decisions
+
+For a new product, broad feature, or underspecified request, first summarize the intended outcome and inspect relevant project context. Identify what is already decided, what can be inferred safely, and which unresolved choices could materially change the first release, user flow, compatibility, or acceptance checks.
+
+Ask up to three targeted questions in the first round. Tie each one to a decision that changes the work. Offer concrete options when they help, with a recommended default and its tradeoff. Use the user's language. Wait for answers before implementing work that depends on unresolved decisions. Ask a follow-up only if an answer exposes another consequential choice. For a clear request, proceed with reversible assumptions stated briefly.
+
+Turn the answers into a short working brief with the first deliverable, constraints, deferred features, and acceptance scenarios. If the user asked only for prompt review or clarification, stop at the questions or brief as appropriate.
 
 ## Define acceptance
 
