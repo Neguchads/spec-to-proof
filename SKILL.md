@@ -1,9 +1,11 @@
 ---
 name: spec-to-proof
-description: Define acceptance criteria and verify software changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target.
+description: Define acceptance criteria and verify software changes with reproducible evidence. Use for features, hard-to-reproduce regressions, optimizations, and prototypes where completion depends on observable behavior, a quality requirement, or a performance target. Also use for focused audits of existing code and architecture.
 ---
 
 # Spec to Proof
+
+For a quick audit, follow [Quick audit](references/quick-audit.md) and use the verification recording rules below. Inspect one representative flow by default.
 
 ## Define acceptance
 

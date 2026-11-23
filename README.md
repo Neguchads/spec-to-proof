@@ -29,6 +29,12 @@ The skill proceeds autonomously on reversible decisions. It asks when a material
 
 Use `spec` or `autoplan` for formal planning when requested, `investigate-first` for uncertain failures, and `lean-build` for a narrowly scoped implementation. Use `qa`, `benchmark`, `design-review`, or a domain-specific auditor for specialized evidence. Use `verify-and-stop` when the task is limited to checking an existing result. These integrations are optional.
 
+## Quick audit
+
+> $spec-to-proof quick audit the configuration loading path. Check module ownership, invalid input handling, and the available tests.
+
+Quick Audit follows one representative flow and checks it against the project's architecture, naming, and test rules. It adds security checks at relevant trust boundaries and license checks when distribution or third-party material is involved. The primary record is in English. Include a short Brazilian Portuguese summary when requested or useful to the project's owner. See the [audit guide](references/quick-audit.md) for scope and evidence.
+
 ## Verification logs
 
 When the task permits writes, the skill saves a Markdown record under the project's designated log directory, or `logs/verification/` by default. It captures the tested revision, relevant environment, commands or scenarios, expected and observed results, and any unverified criteria. The record links to supporting evidence such as frontend screenshots, sanitized backend traces, and binary metadata or disassembly excerpts. See the [verification record guide](references/verification-records.md) for naming and layout. The final response links to the record or reports the evidence inline for read-only work. Logs stay local by default.
