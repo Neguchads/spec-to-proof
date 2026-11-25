@@ -10,6 +10,6 @@ concurrency:
   cancel-in-progress: true
 jobs:
   verify:
-    uses: Neguchads/navi-core/.github/workflows/reusable-ci.yml@169016b9c9578678d6b49a5fae130644d82dea3a
+    uses: Neguchads/navi-core/.github/workflows/reusable-ci.yml@e9fa2e4c825615ddc6f0a24b65d7139ec38fc477
     with:
-      core_sha: 169016b9c9578678d6b49a5fae130644d82dea3a
+      core_sha: e9fa2e4c825615ddc6f0a24b65d7139ec38fc477
