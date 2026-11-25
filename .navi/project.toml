@@ -1,0 +1,14 @@
+schema_version = 1
+[project]
+name = "spec-to-proof"
+visibility = "public"
+maturity = "experimental"
+profile = "documentation"
+[verification]
+require_real_tests = true
+timeout_seconds = 900
+[knowledge]
+public_export = false
+[agents]
+approval_for_production = true
+parallel_workers = 2
