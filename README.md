@@ -62,3 +62,5 @@ Adapted from the [Abyssal Garden brief](https://github.com/Noniv/abyssal-garden/
 ## License
 
 [MIT](LICENSE).
+
+[Open-source credits, provenance and distribution review](CREDITS.md).
